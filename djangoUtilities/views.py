@@ -14,5 +14,7 @@ def hello_world(request):
 
 
 def hi(request):
+    numbers = [int(i) for i in request.GET['numbers']]
+    sorted_inst = sorted(numbers)
     print(request)
-    return HttpResponse(number)
+    return HttpResponse(numbers)
